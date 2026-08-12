@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- LI monogram in the site palette: deep brown ground, cashmere mark -->
+  <rect width="64" height="64" rx="14" fill="#2b1f14" />
+  <!-- L -->
+  <rect x="17" y="16" width="7" height="32" rx="1" fill="#fefcf8" />
+  <rect x="17" y="41" width="18" height="7" rx="1" fill="#fefcf8" />
+  <!-- I -->
+  <rect x="40" y="16" width="7" height="32" rx="1" fill="#d3be99" />
+</svg>

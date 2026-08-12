@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cashmere-50: #fefcf8;
+  --color-cashmere-100: #f6f0e4;
+  --color-cashmere-200: #efe6d5;
+  --color-cashmere-300: #e4d5ba;
+  --color-cashmere-400: #d3be99;
+  --color-cashmere-500: #b99b72;
+
+  --color-brown-100: #efe0d1;
+  --color-brown-400: #a97c52;
+  --color-brown-500: #8a5a34;
+  --color-brown-600: #6e4526;
+
+  --color-ink-400: #a08d76;
+  --color-ink-500: #7b6650;
+  --color-ink-700: #4e3d2c;
+  --color-ink-900: #2b1f14;
+
+  /* brown-based, not black: a black shadow over a warm page reads as grey */
+  --shadow-card:
+    0 1px 2px 0 rgb(88 62 40 / 0.05), 0 6px 16px -4px rgb(88 62 40 / 0.08);
+  --shadow-lift:
+    0 4px 10px -2px rgb(88 62 40 / 0.1), 0 18px 30px -10px rgb(88 62 40 / 0.18);
+
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    /* cursor position, written by the mousemove handler in index.html.
+       Parked off-screen so the halo is not visible before the first move. */
+    --mx: -300px;
+    --my: -300px;
+
+    background-color: var(--color-cashmere-100);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+
+    /* the resting dot field. attachment:fixed keeps it lined up with the
+       halo in ::after, which is position:fixed and does not scroll. */
+    background-image: radial-gradient(
+      circle,
+      rgb(198 158 56 / 0.14) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: var(--color-brown-500);
+    color: var(--color-cashmere-50);
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto max-w-6xl px-6;
+  }
+
+  /* wider than .shell — the project grid needs the room, prose does not */
+  .shell-wide {
+    @apply mx-auto max-w-7xl px-6;
+  }
+
+  .eyebrow {
+    @apply text-xs tracking-[0.3em] text-ink-400 uppercase;
+  }
+
+  .nav-link {
+    @apply text-ink-500 transition hover:text-brown-500;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition;
+  }
+
+  .btn-lg {
+    @apply px-7 py-3 text-base;
+  }
+
+  .btn-solid {
+    @apply bg-ink-900 text-cashmere-50 hover:bg-brown-500;
+  }
+
+  .btn-outline {
+    @apply border border-cashmere-400 text-ink-700 hover:border-ink-900 hover:text-ink-900;
+  }
+
+  .tag {
+    @apply rounded-full bg-cashmere-200 px-3 py-1 text-xs text-ink-700 hover:bg-ink-500 hover:text-brown-100;
+  }
+
+  .card {
+    @apply flex flex-col overflow-hidden rounded-2xl border border-cashmere-300 bg-cashmere-50 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cashmere-400 hover:shadow-lift;
+  }
+
+  /* One box for every card, always 16:10, and object-contain so no
+     screenshot is ever cut. The captures range from 0.98 to 1.54, so the
+     leftover space goes to the warm backdrop instead of to cropping.
+     shrink-0 stops the flex column from stretching the box past its ratio. */
+  .card-shot {
+    @apply aspect-16/10 w-full shrink-0 bg-linear-to-br from-cashmere-200 via-cashmere-100
+     to-brown-100 object-contain p-4;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .group:hover .card-shot {
+    transform: scale(1.03);
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+      circle,
+      rgb(216 178 76 / 0.9) 1.5px,
+      transparent 1.5px
+    );
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(
+      circle 200px at var(--mx) var(--my),
+      #000 0%,
+      transparent 70%
+    );
+    mask-image: radial-gradient(
+      circle 200px at var(--mx) var(--my),
+      #000 0%,
+      transparent 70%
+    );
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

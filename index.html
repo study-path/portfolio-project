@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" sizes="any" href="/favicon.ico" />
+
+    <title>Liliia Inhul — Software Developer</title>
+    <meta
+      name="description"
+      content="Liliia Inhul, full stack developer based in Canada, building modern web applications."
+    />
+
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <link href="/src/style.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="relative">
+    <svg hidden>
+      <symbol
+        id="icon-menu"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+      >
+        <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+      </symbol>
+      <symbol
+        id="icon-arrow"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M7 17 17 7M9 7h8v8"
+        />
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 16 16" fill="currentColor">
+        <path
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+        />
+      </symbol>
+    </svg>
+
+    <header
+      class="sticky top-0 z-50 border-b border-cashmere-300/70 bg-cashmere-100/80 backdrop-blur-md"
+    >
+      <div class="shell flex items-center justify-between py-4">
+        <a href="#home" class="font-display text-2xl tracking-tight"
+          >Liliia Inhul</a
+        >
+
+        <nav class="hidden gap-8 text-sm md:flex">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <a href="#contact" class="btn btn-solid hidden md:inline-flex"
+          >Get in touch</a
+        >
+
+        <button
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation"
+          class="rounded-lg border border-cashmere-300 p-2 md:hidden"
+        >
+          <svg class="h-5 w-5"><use href="#icon-menu" /></svg>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden border-t border-cashmere-300 md:hidden"
+      >
+        <nav class="shell flex flex-col py-3 text-sm">
+          <a href="#home" class="py-2 text-ink-500">Home</a>
+          <a href="#about" class="py-2 text-ink-500">About</a>
+          <a href="#projects" class="py-2 text-ink-500">Projects</a>
+          <a href="#contact" class="py-2 text-ink-500">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="relative z-10">
+      <section id="home" class="shell pt-20 pb-24 md:pt-28">
+        <p class="eyebrow reveal mb-6">Based in Canada</p>
+
+        <h1
+          class="reveal font-display text-6xl leading-[0.95] tracking-tight md:text-8xl"
+        >
+          Hi, I'm Liliia
+        </h1>
+
+        <div
+          class="reveal mt-8 flex h-12 items-center gap-3 text-2xl md:text-4xl"
+        >
+          <span class="h-px w-12 bg-brown-500"></span>
+          <span id="typing-text" class="font-display text-brown-500"></span>
+        </div>
+
+        <p class="reveal mt-10 max-w-2xl text-lg leading-relaxed text-ink-500">
+          Front-end development and Microsoft Power Platform solutions, with a
+          background in bank finance.
+        </p>
+
+        <div class="reveal mt-10 flex flex-wrap gap-4">
+          <a href="#projects" class="btn btn-lg btn-solid">View my work</a>
+          <a href="#contact" class="btn btn-lg btn-outline">Contact me</a>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="border-y border-cashmere-300 bg-cashmere-200/60"
+      >
+        <div
+          class="shell grid gap-x-14 gap-y-6 pt-24 pb-10 md:grid-cols-[1fr_1.3fr]"
+        >
+          <div class="reveal">
+            <p class="eyebrow">About</p>
+            <h2 class="mt-4 font-display text-5xl leading-tight">
+              From spreadsheets to shipping software !
+            </h2>
+          </div>
+
+          <div class="reveal space-y-6 text-lg leading-relaxed text-ink-500">
+            <p>
+              I am a web developer based in Ontario, Canada, who enjoys turning
+              ideas into practical, user-friendly digital experiences. I build
+              responsive applications and interfaces, working with Angular, Vue
+              and React.
+            </p>
+            <p>
+              My background is in finance, working in bank back-office
+              operations, managing foreign exchange and international payments,
+              supporting Treasury operations, and making sure transactions,
+              accounts, and reports reconciled correctly before the day was
+              done. It taught me to think carefully about data, processes, and
+              the people who use them. Today I work across both front-end
+              development and business solutions on the Microsoft Power
+              Platform, and I like projects where technology makes something
+              simpler, clearer, or more useful.
+            </p>
+            <p>
+              When I am not at my computer 👩🏻‍💻 I like to stay active:
+              snowboarding 🏂, wakeboarding 🌊, Pilates 🧘. I enjoy trying
+              things that push me a little outside my comfort zone, and
+              programming gives me the same feeling. I enjoy being a beginner,
+              solving problems, and seeing myself improve.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="shell grid gap-x-14 gap-y-6 border-t border-cashmere-300 py-10 md:grid-cols-[1fr_1.3fr]"
+        >
+          <div class="reveal">
+            <p class="eyebrow">Skills</p>
+          </div>
+
+          <div class="reveal flex flex-wrap gap-2">
+            <span class="tag">Angular</span>
+            <span class="tag">Vue</span>
+            <span class="tag">React</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag">C#</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Power Platform</span>
+            <span class="tag">Power Automate</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">SharePoint</span>
+          </div>
+        </div>
+
+        <div
+          class="shell grid gap-x-14 gap-y-6 border-t border-cashmere-300 pt-10 pb-24 md:grid-cols-[1fr_1.3fr]"
+        >
+          <div class="reveal">
+            <p class="eyebrow">Education</p>
+            <div class="mt-6">
+              <p class="text-ink-900">Master's in Accounting and Auditing</p>
+              <p class="mt-1 text-sm text-ink-500">
+                Dnipro Institute of Infrastructure and Transport, Ukraine
+              </p>
+              <p class="mt-1 text-sm text-ink-400">Honours degree</p>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <p class="eyebrow">Certifications</p>
+            <ul class="mt-6 space-y-5">
+              <li class="flex gap-6">
+                <span class="w-12 shrink-0 text-sm text-ink-400 tabular-nums"
+                  >2026</span
+                >
+                <span>
+                  <a
+                    href="/certificates/power-bi-linkedin-learning.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="block text-ink-900 underline decoration-cashmere-400 underline-offset-4 transition hover:text-brown-500 hover:decoration-brown-500"
+                    >Power BI Data Visualization and Dashboard Tips, Tricks, and
+                    Techniques</a
+                  >
+                  <span class="block text-sm text-ink-500"
+                    >LinkedIn Learning</span
+                  >
+                </span>
+              </li>
+              <li class="flex gap-6">
+                <span class="w-12 shrink-0 text-sm text-ink-400 tabular-nums"
+                  >2025</span
+                >
+                <span>
+                  <a
+                    href="https://www.udacity.com/certificate/e/6b3bbc46-4aec-11f0-a0e7-6bfc2a5a652b"
+                    target="_blank"
+                    rel="noopener"
+                    class="block text-ink-900 underline decoration-cashmere-400 underline-offset-4 transition hover:text-brown-500 hover:decoration-brown-500"
+                    >Introducing Generative AI with AWS</a
+                  >
+                  <span class="block text-sm text-ink-500">Udacity</span>
+                </span>
+              </li>
+              <li class="flex gap-6">
+                <span class="w-12 shrink-0 text-sm text-ink-400 tabular-nums"
+                  >2024</span
+                >
+                <span>
+                  <a
+                    href="https://www.hackerrank.com/certificates/abe4cf4690a9"
+                    target="_blank"
+                    rel="noopener"
+                    class="block text-ink-900 underline decoration-cashmere-400 underline-offset-4 transition hover:text-brown-500 hover:decoration-brown-500"
+                    >SQL (Basic)</a
+                  >
+                  <span class="block text-sm text-ink-500">HackerRank</span>
+                </span>
+              </li>
+              <li class="flex gap-6">
+                <span class="w-12 shrink-0 text-sm text-ink-400 tabular-nums"
+                  >2020</span
+                >
+                <span>
+                  <a
+                    href="https://www.udemy.com/certificate/UC-98695e2f-ff2b-4944-9f89-589d2f0f9cfa/"
+                    target="_blank"
+                    rel="noopener"
+                    class="block text-ink-900 underline decoration-cashmere-400 underline-offset-4 transition hover:text-brown-500 hover:decoration-brown-500"
+                    >Understanding TypeScript</a
+                  >
+                  <span class="block text-sm text-ink-500"
+                    >Academind (Udemy)</span
+                  >
+                </span>
+              </li>
+              <li class="flex gap-6">
+                <span class="w-12 shrink-0 text-sm text-ink-400 tabular-nums"
+                  >2020</span
+                >
+                <span>
+                  <a
+                    href="https://www.udemy.com/certificate/UC-11bd1b7a-c845-45dc-ae3d-c4cc745a6626/"
+                    target="_blank"
+                    rel="noopener"
+                    class="block text-ink-900 underline decoration-cashmere-400 underline-offset-4 transition hover:text-brown-500 hover:decoration-brown-500"
+                    >Angular (Full App) with Angular Material, Angularfire &amp;
+                    NgRx</a
+                  >
+                  <span class="block text-sm text-ink-500">Udemy</span>
+                </span>
+              </li>
+              <li class="flex gap-6">
+                <span class="w-12 shrink-0 text-sm text-ink-400 tabular-nums"
+                  >2019</span
+                >
+                <span>
+                  <a
+                    href="https://www.coursera.org/account/accomplishments/verify/X9NGWN94B3MY"
+                    target="_blank"
+                    rel="noopener"
+                    class="block text-ink-900 underline decoration-cashmere-400 underline-offset-4 transition hover:text-brown-500 hover:decoration-brown-500"
+                    >Front-End JavaScript Frameworks: Angular</a
+                  >
+                  <span class="block text-sm text-ink-500">Coursera</span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="shell-wide py-24">
+        <div
+          class="reveal flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+        >
+          <div>
+            <p class="eyebrow">Work</p>
+            <h2 class="mt-4 font-display text-5xl leading-tight md:text-6xl">
+              Selected projects
+            </h2>
+          </div>
+          <!-- <p class="max-w-sm text-ink-500">
+            Five apps built over the past year.
+          </p> -->
+        </div>
+
+        <div class="mt-14 grid gap-8 sm:grid-cols-2">
+          <article class="card group reveal">
+            <img
+              src="/projects/flowers.webp"
+              alt="Flower Shop preview"
+              loading="lazy"
+              class="card-shot"
+            />
+
+            <div class="flex flex-1 flex-col gap-4 p-6 pt-8">
+              <h3 class="font-display text-3xl leading-tight">Flower Shop</h3>
+              <p class="flex-1 leading-relaxed text-ink-500">
+                An online plant store: browse the catalogue, create an account
+                and sign in. The front end talks to a REST API for products and
+                authentication, with client-side routing between pages.
+              </p>
+              <ul class="flex flex-wrap gap-2">
+                <li class="tag">React</li>
+                <li class="tag">React Router</li>
+                <li class="tag">Tailwind</li>
+              </ul>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://flowers-app-portfolioproject.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-solid"
+                >
+                  Live demo
+                  <svg class="h-3.5 w-3.5"><use href="#icon-arrow" /></svg>
+                </a>
+                <a
+                  href="https://github.com/study-path/flowers-app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-outline"
+                >
+                  <svg class="h-4 w-4"><use href="#icon-github" /></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card group reveal">
+            <img
+              src="/projects/recipefy.webp"
+              alt="Recipefy preview"
+              loading="lazy"
+              class="card-shot"
+            />
+
+            <div class="flex flex-1 flex-col gap-4 p-6 pt-8">
+              <h3 class="font-display text-3xl leading-tight">Recipefy</h3>
+              <p class="flex-1 leading-relaxed text-ink-500">
+                Type in what you have and it finds something you can cook
+                tonight. Searches the Spoonacular database, narrows results by
+                cuisine, and opens any recipe for the full method.
+              </p>
+              <ul class="flex flex-wrap gap-2">
+                <li class="tag">React</li>
+                <li class="tag">React Router</li>
+                <li class="tag">Spoonacular API</li>
+              </ul>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://recipefy-app-portfolioproject.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-solid"
+                >
+                  Live demo
+                  <svg class="h-3.5 w-3.5"><use href="#icon-arrow" /></svg>
+                </a>
+                <a
+                  href="https://github.com/study-path/recipefy"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-outline"
+                >
+                  <svg class="h-4 w-4"><use href="#icon-github" /></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card group reveal">
+            <img
+              src="/projects/dictionary.webp"
+              alt="WordWise preview"
+              loading="lazy"
+              class="card-shot"
+            />
+
+            <div class="flex flex-1 flex-col gap-4 p-6 pt-8">
+              <h3 class="font-display text-3xl leading-tight">WordWise</h3>
+              <p class="flex-1 leading-relaxed text-ink-500">
+                A dictionary that gives a full explanation of a word instead of
+                a single line, and pulls in photography to illustrate the more
+                abstract ones.
+              </p>
+              <ul class="flex flex-wrap gap-2">
+                <li class="tag">React</li>
+                <li class="tag">Dictionary API</li>
+                <li class="tag">Pexels API</li>
+              </ul>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://ai-dictionary-portfolioproject.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-solid"
+                >
+                  Live demo
+                  <svg class="h-3.5 w-3.5"><use href="#icon-arrow" /></svg>
+                </a>
+                <a
+                  href="https://github.com/study-path/ai-dictionary"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-outline"
+                >
+                  <svg class="h-4 w-4"><use href="#icon-github" /></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card group reveal">
+            <img
+              src="/projects/movies.webp"
+              alt="TV Time preview"
+              loading="lazy"
+              class="card-shot"
+            />
+
+            <div class="flex flex-1 flex-col gap-4 p-6 pt-8">
+              <h3 class="font-display text-3xl leading-tight">TV Time</h3>
+              <p class="flex-1 leading-relaxed text-ink-500">
+                Film discovery across thousands of titles from TMDB, sorted by
+                popularity and filtered by genre, with search across the whole
+                catalogue.
+              </p>
+              <ul class="flex flex-wrap gap-2">
+                <li class="tag">React</li>
+                <li class="tag">TMDB API</li>
+                <li class="tag">Appwrite</li>
+              </ul>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://movies-scout-react-app.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-solid"
+                >
+                  Live demo
+                  <svg class="h-3.5 w-3.5"><use href="#icon-arrow" /></svg>
+                </a>
+                <a
+                  href="https://github.com/study-path/movie-react-app"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-outline"
+                >
+                  <svg class="h-4 w-4"><use href="#icon-github" /></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card group reveal">
+            <img
+              src="/projects/weather.webp"
+              alt="Weather Scope preview"
+              loading="lazy"
+              class="card-shot"
+            />
+
+            <div class="flex flex-1 flex-col gap-4 p-6 pt-8">
+              <h3 class="font-display text-3xl leading-tight">Weather Scope</h3>
+              <p class="flex-1 leading-relaxed text-ink-500">
+                Search any city for current conditions. One job, live
+                OpenWeatherMap data, nothing else competing for attention.
+              </p>
+              <ul class="flex flex-wrap gap-2">
+                <li class="tag">React</li>
+                <li class="tag">OpenWeatherMap API</li>
+              </ul>
+              <div class="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://weather-app-portfolioproject.vercel.app/"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-solid"
+                >
+                  Live demo
+                  <svg class="h-3.5 w-3.5"><use href="#icon-arrow" /></svg>
+                </a>
+                <a
+                  href="https://github.com/study-path/weather-app"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-outline"
+                >
+                  <svg class="h-4 w-4"><use href="#icon-github" /></svg>
+                  Source
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="border-t border-cashmere-300 bg-ink-900">
+        <div class="shell py-24 text-cashmere-100">
+          <div class="reveal max-w-2xl">
+            <p class="text-xs tracking-[0.3em] text-cashmere-500 uppercase">
+              Contact
+            </p>
+            <h2 class="mt-4 font-display text-5xl leading-tight md:text-6xl">
+              Let's talk
+            </h2>
+            <p class="mt-6 text-lg leading-relaxed text-cashmere-400">
+              Have a project in mind, a question, or just want to say hi? Drop
+              me a message.
+            </p>
+
+            <a
+              href="mailto:liliia.inhul@gmail.com"
+              class="mt-10 inline-block font-display text-3xl text-brown-400 underline decoration-brown-600 underline-offset-8 transition hover:text-cashmere-50 md:text-4xl"
+            >
+              liliia.inhul@gmail.com
+            </a>
+          </div>
+
+          <div
+            class="reveal mt-16 flex flex-wrap gap-x-10 gap-y-4 border-t border-ink-700 pt-8 text-sm"
+          >
+            <a
+              href="https://github.com/study-path"
+              target="_blank"
+              rel="noopener"
+              class="text-cashmere-400 transition hover:text-brown-400"
+              >GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/liliia-inhul"
+              target="_blank"
+              rel="noopener"
+              class="text-cashmere-400 transition hover:text-brown-400"
+              >LinkedIn</a
+            >
+            <span class="text-cashmere-500">Toronto, Canada</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 border-t border-cashmere-300 bg-cashmere-100">
+      <div
+        class="shell flex flex-col gap-1 py-4 text-sm text-ink-400 sm:flex-row sm:justify-between"
+      >
+        <p>© <span id="year"></span> Liliia Inhul</p>
+        <p>Built with Vite and Tailwind CSS</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typeit/dist/index.umd.js"></script>
+
+    <script>
+      new TypeIt("#typing-text", {
+        strings: [
+          "Full Stack Developer",
+          "Front-End Developer",
+          "AI Enthusiast",
+          "Power Automate Specialist",
+          "Data Analyst",
+        ],
+        startDelay: 300,
+        speed: 90,
+        deleteSpeed: 40,
+        loop: true,
+        loopDelay: 1400,
+        waitUntilVisible: true,
+        breakLines: false,
+      }).go();
+
+      const revealer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            revealer.unobserve(entry.target);
+          });
+        },
+        { rootMargin: "0px 0px -10% 0px", threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => revealer.observe(el));
+
+      const navToggle = document.querySelector("#nav-toggle");
+      const mobileMenu = document.querySelector("#mobile-menu");
+
+      const setMenu = (open) => {
+        mobileMenu.classList.toggle("hidden", !open);
+        navToggle.setAttribute("aria-expanded", String(open));
+      };
+
+      navToggle.addEventListener("click", () =>
+        setMenu(mobileMenu.classList.contains("hidden")),
+      );
+      mobileMenu.addEventListener("click", (event) => {
+        if (event.target.closest("a")) setMenu(false);
+      });
+
+      document.querySelector("#year").textContent = new Date().getFullYear();
+
+      addEventListener("mousemove", (event) => {
+        document.body.style.setProperty("--mx", event.clientX + "px");
+        document.body.style.setProperty("--my", event.clientY + "px");
+      });
+    </script>
+  </body>
+</html>
